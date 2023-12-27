@@ -15,6 +15,7 @@
           with:
             submodule: recursive
         - run: sudo apt-get update && sudo apt-get install cmake libgtest-dev -y
+        - run: git submodule init && git submodule update
         - run: ls googletest
         - run: cmake . -DPATCH_VERSION=${{ github.run_number }}
         - run: cmake --build .
