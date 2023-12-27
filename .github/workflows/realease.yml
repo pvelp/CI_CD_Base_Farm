@@ -10,7 +10,7 @@
       runs-on: ubuntu-latest
       permissions: write-all
       steps:
-        - uses: action/checkout@4
+        - uses: actions/checkout@3
           with:
             submodule: true
         - run: sudo apt-get update && sudo apt-get install cmake libgtest-dev -y
