@@ -11,18 +11,11 @@ set(PROJECT_VERSION_PATCH 1)
 
 configure_file(version.h.in version.h)
 
-# file(READ "build/version.h" VERSION_FILE)
-# string(REGEX MATCH "PROJECT_VERSION_PATCH ([0-9]*)" _ ${VERSION_FILE})
-# set(PROJECT_VERSION_PATCH ${CMAKE_MATCH_1})
-# math(EXPR PROJECT_VERSION_PATCH "${PROJECT_VERSION_PATCH} + 1")
-# configure_file(version.h.in version.h @ONLY)
-
 add_executable(main main.cpp)
 add_library(lib lib.cpp)
 target_link_libraries(main lib)
 
 add_subdirectory(googletest)
-enable_testing()
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/test/*.cpp)
 add_executable(tests ${TEST_SRC_FILES})
