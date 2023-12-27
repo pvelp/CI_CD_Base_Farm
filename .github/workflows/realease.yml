@@ -13,7 +13,7 @@
         - name: Checkout
           uses: actions/checkout@v4.1.1
           with:
-            submodule: true
+            submodule: recursive
         - run: sudo apt-get update && sudo apt-get install cmake libgtest-dev -y
         - run: cmake . -DPATCH_VERSION=${{ github.run_number }}
         - run: cmake --build .
