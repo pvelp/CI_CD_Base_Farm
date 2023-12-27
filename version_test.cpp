@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../lib.hpp"
+#include "lib.hpp"
 
 TEST(VersionTest, BasicAssertions) {
   // Expect equality.
